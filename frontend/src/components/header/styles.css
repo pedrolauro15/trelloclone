@@ -97,6 +97,7 @@
 
 .header .header-right .name-box {
   background: #EEE;
+  cursor: pointer;
   font-size: 14px;
   font-weight: bold;
   align-items: center;

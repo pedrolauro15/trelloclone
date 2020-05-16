@@ -1,0 +1,99 @@
+.sub-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.sub-header .sub-left {
+  display: flex;
+}
+
+.sub-header .sub-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sub-header section .sub-trello-box {
+  box-sizing: content-box;
+  padding: 6px 12px;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 4px;
+  transition: background-color 0.1s;
+}
+
+.sub-header section .sub-trello-box:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.sub-header .sub-trello-box span {
+  color: #FFF;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1px;
+}
+
+.sub-header section .sub-box {
+  display: flex;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.2);
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  border: 0;
+  transition: background-color 0.1s;
+}
+
+.sub-header section .sub-box:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.sub-header section .sub-box .sub-icon {
+  color: #FFF;
+  font-size: 20px;
+}
+
+.sub-header section .sub-box .sub-title {
+  margin: 0 5px 0 5px;
+  color: #FFF;
+  font-size: 14px;
+}
+
+.div-name {
+  display: flex;
+  padding: 4px 0;
+}
+
+.sub-header section .div-name .sub-name {
+  background: #DDD;
+  display: flex;
+  border-radius: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 8px;
+
+  cursor: pointer;
+  transition: opacity 0.1s;
+}
+
+.sub-header section .sub-name:hover {
+  opacity: 0.9;
+}
+
+.sub-header section .ml-4 {
+  margin-left: 4px;
+}
+
+.sub-header section .divider {
+  float: left;
+  border-left: 1px solid hsla(0,0%,100%,.24);
+  height: 16px;
+  margin: 8px 8px 12px 8px;
+}

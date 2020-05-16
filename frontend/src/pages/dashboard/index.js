@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../../components/header';
+import SubHeader from '../../components/subheader';
 
 import './styles.css';
 
@@ -9,7 +10,7 @@ function Dashboard() {
       <Header />
 
       <body>
-        
+        <SubHeader/>
       </body>
     </div>
   );
