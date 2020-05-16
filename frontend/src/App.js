@@ -1,10 +1,8 @@
 import React from 'react';
+import Dashboard from './pages/dashboard';
 
-function App() {
-  return (
-    <div className="App">
-    </div>
-  );
-}
+import './styles/global.css';
+
+const App = () => <Dashboard />;
 
 export default App;
