@@ -11,5 +11,12 @@
   "devDependencies": {
     "nodemon": "^2.0.4",
     "sqlite3": "^4.2.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "make": "yarn knex migrate:make",
+    "latest": "yarn knex migrate:latest",
+    "rollback": "yarn knex migrate:rollback"
   }
 }

@@ -5,40 +5,30 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      filename: './dev.sqlite3'
-    }
-  },
-
-  staging: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
+      filename: './src/database/dev.sqlite3'
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
+      directory: './src/database/migrations'
+    },
+    useNullAsDefault: true,
   },
 
   production: {
     client: 'postgresql',
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      database: 'dhsi2hl4d99e',
+      user:     'zivgfmibdgeyhw',
+      password: 'b0d9a8e32016e49c3a9bbcabeca9cd315237192154ce597668151e8c5dbdab96'
     },
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
+      tableName: 'knex_migrations',
+      directory: './src/database/migrations'
+    },
+    useNullAsDefault: true
   }
 
 };
