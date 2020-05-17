@@ -1,0 +1,27 @@
+.list-add {
+  display: flex;
+  width: 264px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 12px;
+  align-self: flex-start;
+
+  transition: background 0.1s;
+}
+
+ .list-add:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+ .list-add-icon {
+  color: #FFF;
+  font-size: 15px;
+  margin-right: 3px;
+}
+
+.list-add-text {
+  color: #FFF;
+  font-size: 13px;
+  font-weight: 500;
+}

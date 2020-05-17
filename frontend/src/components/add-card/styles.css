@@ -1,0 +1,39 @@
+.add-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px;
+  align-items: center;
+}
+
+.add-card .add-card-button {
+  display: flex;
+  width: 90%;
+  border-radius: 4px;
+  padding: 4px 12px;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.add-card .add-card-button:hover {
+  background: rgba(0, 0, 0, 0.080);
+}
+
+.add-card .add-card-button span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #777;
+}
+
+.add-card .model {
+  color: #777;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+.add-card .model:hover {
+  background: rgba(0, 0, 0, 0.080);
+}
