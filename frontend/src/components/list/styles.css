@@ -1,7 +1,7 @@
 .list {
   display: flex;
   margin-top: 8px;
-  
+  align-items: flex-start;
 }
 
 .modal {
@@ -62,14 +62,14 @@
   border-radius: 4px;
 }
 
-.list .card .card-header {
+.list .card .card-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 8px;
 }
 
-.list .card .card-header span {
+.list .card .card-head span {
   font-weight: 500;
   color: #333;
   font-size: 14px;
@@ -96,6 +96,9 @@
 .list .card .card-content .content {
   color: #444;
   font-size: 14px;
+  border: 0;
+  cursor: pointer;
+  outline: none;
 }
 
 .list .card .card-content .card-icon {
@@ -168,4 +171,8 @@
 
 .foot .foot-footer .right:hover {
   background-color: rgba(0, 0, 0, 0.08);
+}
+
+.teste-modal {
+  background-color: red;
 }

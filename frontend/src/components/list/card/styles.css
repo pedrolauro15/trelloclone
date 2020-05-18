@@ -1,0 +1,57 @@
+.edd {
+  display: flex;
+  background-color: #F4F4F4;
+  flex-direction: column;
+}
+
+.edd input {
+  padding: 8px;
+  font-size: 14px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  border: 0;
+  outline: none;
+  box-shadow: 0 1px 0 rgba(9,30,66,.25);
+}
+
+.edd .edit-button {
+  background-color: #5AAC44;
+  padding: 8px;
+
+  color: #FFF;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  margin-right: 8px;
+  transition: background 0.2s;
+  margin-bottom: 8px;
+}
+
+.edd .edit-button:hover {
+  background-color: #5ABD44;
+}
+
+.edd .edit-button:active {
+  background-color: #5A9B44;
+}
+
+.edd .delete-button {
+  background-color: #DC3545;
+  padding: 8px;
+  transition: background 0.2s;
+  margin-bottom: 8px;
+
+  color: #FFF;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+
+}
+
+.edd .delete-button:hover {
+  background-color: #ED3545;
+}
+
+.edd .delete-button:active {
+  background-color: #CB3545;
+}

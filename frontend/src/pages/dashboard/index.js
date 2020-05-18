@@ -7,7 +7,7 @@ import api from '../../services/api';
 
 import './styles.css';
 
-const id = 1;
+const id=6;
 
 function Dashboard() {
   const [userData, setUserData] = useState([]);
@@ -20,7 +20,7 @@ function Dashboard() {
         },
       });
 
-      console.log(response.data);
+      setUserData(response.data);
 
     } catch (error) {
       alert(error);
@@ -36,7 +36,9 @@ function Dashboard() {
       <body>
         <SubHeader/>
 
-        <List />
+        <List 
+          user={id}
+        />
       </body>
     </div>
   );

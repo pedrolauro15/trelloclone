@@ -1,85 +1,82 @@
-import React, { useState } from 'react';
-import { AiOutlineClose } from 'react-icons/ai';
-import { FiEdit2, FiMoreHorizontal } from 'react-icons/fi';
+import React, { useState, useEffect } from 'react';
+import { FiMoreHorizontal } from 'react-icons/fi';
+import Modal from 'react-modal';
+
+import api from '../../services/api';
 
 import AddModal from '../add-modal';
+import Card from './card';
 import CardFooter from '../add-card';
 
 import './styles.css';
 
-function List() {
-  const [first, setFirst] = useState(true);
-  const [isOppened, setIsOppened] = useState(false);
-  const [isAdding, setIsAdding] = useState(false);
+function List({user}) {
+  const [cardTitle, setCardTitle] = useState('');
+  const [resarch, setResarch] = useState(0);
 
-  const toggle = () => {
-    if(first){
-      setFirst(false);
+  const [lists, setLists] = useState([]);
+
+  const getListsFromUser = async () => {
+    try {
+      const response = await api.get('lists', {
+        headers: {
+          authorization: user
+        }
+      });
+
+      console.log("HERE");
+      console.log(response.data);
+
+      if(response.data.length != undefined){
+        setLists(response.data);
+      }
+  
+    } catch (error) {
+      alert(error);
     }
-
-    setIsOppened(!isOppened);
   }
 
-  const toggleAdd = () => {
-    setIsAdding(!isAdding);
-  }
+  useEffect(() => {getListsFromUser()}, []);
 
-  return(
-    <div className="list">
-      
-      <div className="card">
-        <div className="card-header">
-          <span>Título</span>
+
+  const Lista = ({ list }) => {
+    return(
+      <div key={list.id} className="card">
+        <div className="card-head">
+          <span>{list.title}</span>
           <FiMoreHorizontal
             className="card-icon"
           />
         </div>
 
-        <div className="card-content">
-          <span className="content">Conteúdo</span>
-          <FiEdit2 
-            className="card-icon"
-          />
-        </div>
+        <Card id={list.id} resarch={resarch}/>
 
-        <CardFooter isAdding={isAdding} onClick={toggleAdd}>
-          <div className="foot">
-            <form className="foot-form" onSubmit={(e) => {e.preventDefault()}}>
-              <input placeholder="Insira um título para este cartão..." className="foot-input"/>
-
-              <div className="foot-footer">
-              <div className="left">
-              <button className="foot-button" type="submit" className="foot-button">Adicionar Cartão</button>
-                <div className="foot-close" onClick={toggleAdd}>
-                  <AiOutlineClose />
-                </div>
-              </div>
-
-              <div className="right">
-                <FiMoreHorizontal />
-              </div>
-            </div>
-            </form>
-          </div>
-        </CardFooter>
+        <CardFooter
+          id={list.id}
+          resarch={resarch}
+        />
+          
       </div>
+    )
+  }
 
-     <AddModal first={first} isOpenned={isOppened} onClick={toggle}>
-      <div className="modal">
-        <form className="modal-form" onSubmit={(e) => {e.preventDefault()}}>
-          <input 
-            placeholder="Insira o título da lista..."
-            className="modal-input"
+  return(
+    <div className="list">
+      { 
+        lists.map(list => (
+          <Lista
+            list={list}
+            onChange={e => setCardTitle(e.target.value)}
+            value={cardTitle}
           />
-          <div className="modal-footer">
-            <button className="modal-button" type="submit" className="modal-button">Adicionar Lista</button>
-            <div className="modal-close" onClick={toggle}>
-              <AiOutlineClose />
-            </div>
-          </div>
-        </form>
-      </div>
-     </AddModal>
+        ))
+      }
+
+     <AddModal
+      getListsFromUser={getListsFromUser}
+      id={user}
+     />
+      
     </div>
   );
 }

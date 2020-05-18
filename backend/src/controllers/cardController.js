@@ -11,6 +11,7 @@ module.exports = {
 
       const response = await connection('cards')
       .where({list_id})
+      .orderBy('id')
       .select('*')
       .finally();
 
